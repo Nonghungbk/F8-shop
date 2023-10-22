@@ -2,59 +2,172 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Định nghĩa animation */
+        @keyframes run {
+            0% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(83%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes colorBlink {
+    0%, 100% {
+        color: blue;
+    }
+    50% {
+        color: red;
+    }
+}
+
+.blinking-text {
+    /* animation: blink 1s infinite; */
+    text-align: center;
+    animation: colorBlink 2s infinite;
+    font-weight: bold;
+}
+
+        /* Áp dụng animation cho các thẻ <th> có class "th2" */
+        .th2 {
+            
+            position: initial;
+            /* Thiết lập vị trí tương đối để animation hoạt động */
+            animation: run 4s linear infinite;
+            /* 4s là thời gian một chu kỳ chạy lại */
+            white-space: nowrap;
+            /* Ngăn văn bản bên trong <th> xuống dòng */
+            overflow: hidden;
+            /* Ẩn phần văn bản vượt ra ngoài khu vực của <th> */
+            text-overflow: ellipsis;
+            /* Hiển thị "..." nếu văn bản quá dài để hiển thị */
+            float: left;
+            border: none;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .tr1 {
+            background-color: green;
+        }
+
+        .tr1 .th1 {
+            color: yellow;
+        }
+
+
+        table,
+        th,
+        td {
+            border: 1px solid #333;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 450px;
+            height: 150px;
+        }
+
+        .name {
+            float: left;
+            padding-left: 5px;
+
+        }
+
+        .mobile {
+            float: right;
+            padding-right: 138px;
+        }
+
+        .fullname {
+            float: right;
+            padding-right: 55px;
+        }
+
+        .mail {
+            float: right;
+        }
+
+        .th1 {
+            width: 100px;
+        }
+
+        .part {
+            float: right;
+            padding-right: 133px;
+        }
+
+        #img1 {
+            height: 100px;
+            width: 100px;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
-        <ul style="list-style-image: url('https://cdn.kiencang.net/wp-content/uploads/2021/02/bullet-yellow.png');">
-            <li>Táo</li>
-            <li>Mận</li>
-            <li>Đào</li>
-        </ul>
-    </div>
-    <div>
-        <form>
-            <input name="gender" type="radio" value="Nam" />Nam
-            <input name="gender" type="radio" value="Nữ" />Nữ
-            <input name="gender" type="radio" value="Khác" />Khác
-        </form>
-    </div>
-    <br>
-    <div>
-        <form>
-            <input checked="checked" name="country" type="radio" value="VN" />Việt Nam
-            <input name="country" type="radio" value="TQ" />Trung Quốc
-            <input name="country" type="radio" value="NB" />Nhật Bản
-            <input name="country" type="radio" value="HQ" />Hàn Quốc
-        </form>
-    </div>
-    <div>
-        <img src="https://cdn.kiencang.net/wp-content/uploads/2021/02/planets.gif" alt="Planets" usemap="#planetmap"
-            width="145" height="126" />
-        <map name="planetmap">
-            <area alt="Sun" coords="0,0,82,126" shape="rect"
-                href="https://cdn.kiencang.net/wp-content/uploads/2021/02/sun.gif" />
-            <area alt="Mercury" coords="90,58,3" shape="circle"
-                href="https://cdn.kiencang.net/wp-content/uploads/2021/02/merglobe.gif" />
-            <area alt="Venus" coords="124,58,8" shape="circle"
-                href="https://cdn.kiencang.net/wp-content/uploads/2021/02/venglobe.gif" />
-        </map>
-    </div>
-    <div>
-        <table>
-            <tr>
-                <td>Họ tên</td>
-                <td>Tuổi</td>
-                <td>Quê quán</td>
-            </tr>
-            <tr>
-                <td>Nguyễn Đức Anh</td>
-                <td>26</td>
-                <td>Hà Nội</td>
-            </tr>
-        </table>
-    </div>
+    <table>
+        <tr class="tr1">
+            <th class="th1">SINGATURE</th>
+            <th class="th2" colspan="">
+                <sub>Thank you & best regards</sub>
+                
+            </th>
+        </tr>
+        <td rowspan="5">
+            <img src="/img1.jpg" alt="Anh dai dien" id="img1">
+            <div style="text-align: center; font-family: 'Courier New', Courier, monospace;"><sup>Hello world</sup></div>
+            <div class="blinking-text"><sup>I'm HÙNG</sup></div>
+        </td>
+        <tr>
+            <td>
+                <div class="name">
+                    <b>Name</b>
+                </div>
+                <div class="fullname">| Nông Văn Hùng(農文雄)</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="name">
+                    <b>Ext/Mobile</b>
+                </div>
+                <div class="mobile">| 0961484834</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="name">
+                    <b>Email</b>
+                </div>
+                <div class="mail">| cpe-vn-fii-sw@mail.foxconn.com</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="name">
+                    <b>Part</b>
+                </div>
+                <div class="part">| FII-SortWare</div>
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>

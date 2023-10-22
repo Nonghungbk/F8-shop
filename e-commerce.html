@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  @keyframes runningText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  th {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    width: 200px; /* Điều chỉnh kích thước của thẻ th */
+  }
+
+  th div {
+    position: absolute;
+    width: 100%;
+    animation: runningText 5s linear infinite;
+  }
+</style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th><div>Chạy qua lại trong khu vực của thẻ</div></th>
+        </tr>
+    </table>
+</body>
+</html>
